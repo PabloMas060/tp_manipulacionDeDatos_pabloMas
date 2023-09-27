@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('partials/head') %>
+
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1 class="titulo">Agregar Película</h1>
+    <br>
+    <section class="formulario">
+        <form action="/movies/create" method="POST">
+            <label for="title">Title </label>
+            <p><input type="text" name="title" id="" class="<%= locals.errors && (errors.name && 'is-invalid') %>" value="<%= locals.old && (old.name && old.name) %>"></p>
+            <small class="ms-2 text-danger">
+                <%= locals.errors && (errors.name && errors.name.msg) %>
+            </small>
+            <label for="rating">Rating </label>
+            <p><input type="number" name="rating" id="" class="<%= locals.errors && (errors.rating && 'is-invalid') %>" value="<%= locals.old && (old.rating && old.rating) %>"> </p>
+            <small class="ms-2 text-danger">
+                <%= locals.errors && (errors.rating && errors.rating.msg) %>
+            </small>
+            <label for="awards">Awards </label>
+            <p><input type="number" name="awards" id="" class="<%= locals.errors && (errors.awards && 'is-invalid') %>" value="<%= locals.old && (old.awards && old.awards) %>"></p>
+            <small class="ms-2 text-danger">
+                <%= locals.errors && (errors.awards && errors.awards.msg) %>
+            </small>
+            <label for="release_date">Release date </label>
+            <p><input type="date" name="release_date" id="" class="<%= locals.errors && (errors.release_date && 'is-invalid') %>" value="<%= locals.old && (old.release_date && old.release_date) %>"></p>
+            <small class="ms-2 text-danger">
+                <%= locals.errors && (errors.release_date && errors.release_date.msg) %>
+            </small>
+            <label for="length">Length </label>
+            <p><input type="number" name="length" id="" class="<%= locals.errors && (errors.length && 'is-invalid') %>" value="<%= locals.old && (old.length && old.length) %>"></p>
+            <small class="ms-2 text-danger">
+                <%= locals.errors && (errors.length && errors.length.msg) %>
+            </small>
+
+            <br>
+            <p> <button class="botonAgregar" type="submit">Agregar</button>
+            
+            <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>
